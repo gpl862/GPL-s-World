@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Регистрация</title>
+    <style>
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        .container h2 {
+            text-align: center;
+        }
+        .container input[type="text"],
+        .container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Регистрация</h2>
+        <input type="text" placeholder="Имя пользователя">
+        <input type="password" placeholder="Пароль">
+        <button onclick="register()">Зарегистрироваться</button>
+    </div>
+
+    <div id="profile" style="display: none;">
+        <h2>Профиль</h2>
+        <p id="username"></p>
+    </div>
+
+    <script>
+        function register() {
+            var username = document.querySelector('.container input[type="text"]').value;
+            var password = document.querySelector('.container input[type="password"]').value;
+
+            // Здесь вы можете добавить логику для регистрации пользователя
+            // Например, отправить данные на сервер для сохранения в базе данных
+
+            // После успешной регистрации, скрываем форму регистрации и отображаем профиль
+            document.querySelector('.container').style.display = "none";
+            document.getElementById('profile').style.display = "block";
+            document.getElementById('username').innerText = "Имя пользователя: " + username;
+        }
+    </script>
+<font size="5" color="black" face="Comic Sans MS"><b><center>chat testing</center></b></font>
+</body>
+</html>
