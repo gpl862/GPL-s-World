@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat</title>
+    <style>
+        #chatbox {
+            width: 400px;
+            height: 300px;
+            border: 1px solid #ccc;
+            overflow-y: scroll;
+        }
+        #message {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chatbox"></div>
+    <input type="text" id="message" placeholder="Введите сообщение">
+    <button onclick="sendMessage()">Отправить</button>
+
+    <script>
+        function sendMessage() {
+            var message = document.getElementById("message").value;
+            var chatbox = document.getElementById("chatbox");
+
+            if (message.trim() !== "") {
+                var newMessage = document.createElement("p");
+                newMessage.innerText = message;
+                chatbox.appendChild(newMessage);
+                document.getElementById("message").value = "";
+                chatbox.scrollTop = chatbox.scrollHeight;
+            }
+        }
+    </script>
+<font size="5" color="black" face="Comic Sans MS"><b><center>chat testing</center></b></font>
+</body>
+</html>
